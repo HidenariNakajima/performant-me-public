@@ -515,14 +515,3 @@
     
     console.log('Analytics library loaded');
 })();
-
-// Heavy computation on load
-console.log('Starting heavy vendor computations...');
-for (let i = 0; i < 500000; i++) {
-    Math.sqrt(i);
-    if (i % 1000 === 0) {
-        // Yield control occasionally
-        setTimeout(() => {}, 0);
-    }
-}
-console.log('Vendor computations complete');
