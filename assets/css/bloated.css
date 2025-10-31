@@ -1,65 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #fff;
-    overflow-x: hidden;
-}
-
 div[class*="gallery"] img[src*="jpg"]:hover + div ~ div {
     transform: scale(1.1);
-}
-
-.header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Unnecessary layer creation */
-    will-change: transform, opacity;
-    transform: translateZ(0);
-}
-
-.logo {
-    max-height: 60px;
-    transition: all 0.3s ease;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
 .logo:hover {
     transform: scale(1.1) rotate(5deg);
     filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.5));
-}
-
-.navigation ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.navigation a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
 }
 
 .navigation a:hover {
@@ -85,29 +30,6 @@ div[class*="gallery"] img[src*="jpg"]:hover + div ~ div {
     opacity: 1;
 }
 
-/* Main content */
-main {
-    margin-top: 80px;
-}
-
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-background {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    /* Force layer creation */
-    transform: translateZ(0);
-    will-change: transform;
-}
-
 .hero-background::before {
     content: '';
     position: absolute;
@@ -116,37 +38,6 @@ main {
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,0.4);
-    /* Another layer */
-    transform: translateZ(0);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
-    max-width: 800px;
-    padding: 2rem;
-    /* Unnecessary layer */
-    transform: translateZ(0);
-    will-change: transform, opacity;
-}
-
-.hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    animation: fadeInUp 2s ease-out;
-    /* Force layer */
-    transform: translateZ(0);
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    opacity: 0.9;
-    animation: fadeInUp 2s ease-out 0.5s both;
     /* Another layer */
     transform: translateZ(0);
 }
@@ -340,17 +231,4 @@ main {
     body main section.map-section .map-section h2 {
         font-size: 2rem;
     }
-}
-
-.hero-title,
-.hero-subtitle,
-.navigation,
-.logo {
-    /* These should be in critical CSS */
-}
-
-.gallery-grid img,
-.animations,
-.footer {
-    /* These could be loaded later */
 }
